@@ -1,0 +1,16 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=24
+
+Here are the mappings I use for this script (which I'll use in my description)
+
+map <F12> :call LoadHeaderFile( getline( "." ), 0 )<CR>
+map <C-F12> :call LoadHeaderFile( getline( "." ), 1 )<CR>
+
+To use the script, just have your cursor on a #include line and hit F12 to load the .h file or C-F12 to load the corresponding .cpp file.  It splits the window when it loads the file.  If it can't find the file it just gives you an error that it can't find the file.
+
+You have to have your path set up correctly for it to work.  If you don't know how to do that, simply add a "se path=.,c:/path/**,c:/another path/**" to you _vimrc.  Obviously there is a better explanation of paths in the help.
+
+The code works on includes with <> or "".  It only checks for .h and .cpp, but you could modify it to do more.  I kept it simple so it's quicker.
+
+And as I'm typing this up I noticed that the #include has to be at the beginning of the line...can't have spaces or tabs.  I'll fix that in the next version :)
+
+If you see any flaws or ways to improve this script, please let me know since I'm still learning how to script.
